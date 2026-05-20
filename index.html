@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🎉 Felices 19 años mi amorcito 🎉</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins;
+color:white;
+text-align:center;
+
+/* ✅ ARREGLADO */
+overflow-x:hidden;
+overflow-y:auto;
+
+background:radial-gradient(circle,#ff4f81,#120018);
+}
+
+/* 🎬 INTRO */
+#intro{
+position:fixed;
+inset:0;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff4f81,#2b002b,#ffb6c1);
+background-size:300% 300%;
+animation:fondo 8s infinite alternate;
+z-index:10;
+padding:20px;
+box-sizing:border-box;
+}
+
+@keyframes fondo{
+0%{background-position:left;}
+100%{background-position:right;}
+}
+
+#intro h1{
+font-family:"Great Vibes";
+font-size:55px;
+padding:0 20px;
+}
+
+/* BOTONES */
+button{
+padding:15px 30px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-weight:bold;
+margin-top:20px;
+background:white;
+color:#ff2f6d;
+font-size:16px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* PANTALLAS */
+.screen{
+display:none;
+
+/* ✅ ARREGLADO */
+min-height:100vh;
+
+padding:20px;
+box-sizing:border-box;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+/* ACTIVAR */
+.active{
+display:flex;
+}
+
+/* 📸 GALERÍA */
+.slider{
+
+/* ✅ RESPONSIVE */
+width:90%;
+max-width:300px;
+
+height:300px;
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 0 20px rgba(255,255,255,0.3);
+margin:auto;
+}
+
+.slides{
+display:flex;
+width:100%;
+animation:slide 12s forwards;
+}
+
+.slides img{
+width:100%;
+height:300px;
+object-fit:cover;
+flex-shrink:0;
+}
+
+@keyframes slide{
+
+0%{
+transform:translateX(0);
+}
+
+30%{
+transform:translateX(0);
+}
+
+35%{
+transform:translateX(-100%);
+}
+
+65%{
+transform:translateX(-100%);
+}
+
+70%{
+transform:translateX(-200%);
+}
+
+100%{
+transform:translateX(-200%);
+}
+
+}
+
+/* 🎁 REGALOS */
+.gift{
+font-size:70px;
+margin:10px;
+cursor:pointer;
+transition:0.2s;
+}
+
+.gift:hover{
+transform:scale(1.1);
+}
+
+#msg{
+font-size:20px;
+margin-top:15px;
+font-weight:bold;
+padding:0 15px;
+}
+
+/* 💌 CARTA */
+.card{
+background:rgba(255,255,255,0.1);
+padding:20px;
+border-radius:20px;
+margin-top:15px;
+max-width:350px;
+backdrop-filter:blur(10px);
+}
+
+/* 💖 CORAZONES */
+.heart{
+position:fixed;
+font-size:18px;
+animation:float 6s linear infinite;
+pointer-events:none;
+z-index:999;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🎬 INTRO -->
+<div id="intro">
+
+<h1>🎉 Felices 19 años mi princesa hermosa 🎉</h1>
+
+<p>
+Hoy es un día muy especial para los dos 💖
+</p>
+
+<button onclick="entrar()">
+Entrar 🎁
+</button>
+
+</div>
+
+<!-- 🎵 MÚSICA -->
+<audio id="musica" loop playsinline>
+<source src="dondenadiepuedair.mp3.mp3.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 📸 GALERÍA -->
+<div class="screen" id="galeria">
+
+<h1>📸 Momentos especiales</h1>
+
+<div class="slider">
+
+<div class="slides">
+
+<img src="galeria/foto1.jpg">
+<img src="galeria/foto2.jpg">
+<img src="galeria/foto3.jpg">
+
+</div>
+
+</div>
+
+<button onclick="irRegalos()">
+🎁 Ir a regalos
+</button>
+
+</div>
+
+<!-- 🎁 REGALOS -->
+<div class="screen" id="regalos">
+
+<h1>🎁 Regalos especiales</h1>
+
+<div class="gift" onclick="gift('💖 Un abrazo enorme')">
+🎁
+</div>
+
+<div class="gift" onclick="gift('🍔 Una salida a comer')">
+🎀
+</div>
+
+<div class="gift" onclick="gift('💋 Un besoteee')">
+💝
+</div>
+
+<p id="msg"></p>
+
+<button onclick="irCarta()">
+💌 Detallito
+</button>
+
+</div>
+
+<!-- 💌 CARTA -->
+<div class="screen" id="carta">
+
+<h1>💌 Carta para ti</h1>
+
+<div class="card">
+
+<p>
+Hoy celebramos el nacimiento de una niña tan preciosa 💖
+<br><br>
+
+Te adoro mi vida, espero que este sea un día inolvidable para ti 🎉
+<br><br>
+
+Gracias por existir mi princesa hermosa ❤️
+<br><br>
+
+Eres mi razón de sonreír ✨
+<br><br>
+
+💖 Feliz cumpleaños mi amorcito 💖
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+let musica = document.getElementById("musica");
+
+/* 🎬 ENTRAR */
+function entrar(){
+
+document.getElementById("intro").style.display = "none";
+
+/* mostrar galería */
+mostrar("galeria");
+
+/* música */
+musica.volume = 0.8;
+
+musica.play().catch(()=>{});
+
+/* corazones */
+setInterval(()=>{
+
+let h = document.createElement("div");
+
+h.className = "heart";
+
+h.innerHTML = "💖";
+
+h.style.left = Math.random()*100 + "vw";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},6000);
+
+},500);
+
+}
+
+/* CAMBIAR PANTALLAS */
+function mostrar(id){
+
+document.querySelectorAll(".screen")
+.forEach(s=>{
+s.classList.remove("active");
+});
+
+let pantalla = document.getElementById(id);
+
+if(pantalla){
+pantalla.classList.add("active");
+window.scrollTo(0,0);
+}
+
+}
+
+/* 🎁 IR A REGALOS */
+function irRegalos(){
+mostrar("regalos");
+}
+
+/* 💌 IR A CARTA */
+function irCarta(){
+mostrar("carta");
+}
+
+/* 🎁 MENSAJES */
+function gift(text){
+document.getElementById("msg").innerText = text;
+}
+
+</script>
+
+</body>
+</html>
